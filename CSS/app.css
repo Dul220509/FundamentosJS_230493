@@ -1,0 +1,33 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: burlywood;
+}
+*, *:before, *:after {
+    border: inherit;
+}
+header{
+    padding: 3rem;
+
+}
+ header h1{
+    text-align: center;
+    color: blueviolet;
+    font-size: 6rem;
+ }
+ header p{
+    color: rgb(56, 21, 63);
+    text-align: center;
+ }
+ header p a {
+    text-decoration: none;
+    color: rgb(187, 102, 180);
+ }
+
+ .DOM h2{
+    color: aqua;
+ }
