@@ -7,6 +7,12 @@ Proyecto de clase para la unidad 1 de la asignatura de Aplicaciones Web Orientad
   par de practicas de repaso en JavaScript puro, con eol objetivo de confirmar los conocimientos 
   básicos de lógica de programación
 
+## Historial de practicas
+-------------------------------
+|No.|Descripción|Estatus|
+|1.|Metodología de Evaluacion|Activa|
+|2.|Inicialización del Proyecto de fundamentos de JS|Activa|
+-----------
 
 
 
