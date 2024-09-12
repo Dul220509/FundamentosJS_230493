@@ -86,7 +86,7 @@ header p a {
 }
 
 .alerta.error {
-    background-color: yellow;
+    background-color: rgb(97, 97, 34);
 }
 
 .alerta.exito{
