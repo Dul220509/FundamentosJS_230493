@@ -14,7 +14,7 @@ Proyecto de clase para la unidad 1 de la asignatura de Aplicaciones Web Orientad
 |1.|Metodología de Evaluacion|1|Finalizada|
 |2.|Inicialización del Proyecto de fundamentos de JS|5|Finalizada|
 |3.|Declaración de variables (undeFinided,Number,Boolean)|10|Finalizada|
-|4.|Declaracion de variables (String/BigInit/Null/Symbol/Function)|6|Activa|
+|4.|Declaracion de variables (String/BigInit/Null/Symbol/Function)|6|Finalizada|
 |5.|Introduccion a objetos |--|activa|
 
 
