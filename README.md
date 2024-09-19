@@ -9,10 +9,13 @@ Proyecto de clase para la unidad 1 de la asignatura de Aplicaciones Web Orientad
 
 ## Historial de practicas
 
-|No.|Descripción|Estatus|
-|--|--|--|
-|1.|Metodología de Evaluacion|Activa|
-|2.|Inicialización del Proyecto de fundamentos de JS|Activa|
+|No.|Descripción|Potenciador|Estatus|
+|--|--|--|--|
+|1.|Metodología de Evaluacion|1|Finalizada|
+|2.|Inicialización del Proyecto de fundamentos de JS|5|Finalizada|
+|3.|Declaración de variables (undeFinided,Number,Boolean)|10|Finalizada|
+|4.|Declaracion de variables (String/BigInit/Null/Symbol/Function)|Por definir|Activa|
+|5.|Introduccion a objetos |--|activa|
 
 
 

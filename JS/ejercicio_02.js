@@ -63,3 +63,4 @@ console.log(`tu nuevo saldo es de ${saldo_cuenta}`);
 //El cliente realiza uin abono de 1500
 monto_trasaccion=1500;
 console.log (`tu abono de ${monto_trasaccion} a sido asignada tu nuevbo saldo es de :${(saldo_cuenta+monto_trasaccion)}`);
+
