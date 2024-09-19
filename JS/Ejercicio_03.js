@@ -222,7 +222,7 @@ console.log(
    "Las variables tienen el mismo valor, pero no el mismo tipo de dato");
 
 
-console.warn("Tipo de FUNCTION (funciones)");
+console.warn("Tipo de FUNCTIóN (funciones)");
 // 8.Function(Funciones)
 /*Declaramos una funcion que nos permite recibir un parametro en este caso el nokmbre de la 
 perasona a saludar y la enviamos un saludo, esta funcion la asignamios a una constabnte  */
