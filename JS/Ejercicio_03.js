@@ -328,6 +328,12 @@ console.log(`El tipo de dato de la constante es: ${typeof(saludar)}`);
 
 
 
+
+
+
+
+
+
 // const numero ="38"
 // const numero2 =38
 
