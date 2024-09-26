@@ -1,16 +1,7 @@
 // const nombre = "Tablet"
 // const precio = 300
 // const disponible = true
-console.warn("----------------------------)");
-const producto = {
-    modelo: "ipad",
-    costo_compra : 11500.25,
-    costo_venta:  15400,
-    disponible : true,
-    SKU: Symbol("123456"),
-    colores: ["Blanco","Negro","Rosa","Amarillo","azul"]
-}
-
+/*console.warn("----------------------------");
 
 console.log(producto)
 console.table(producto)
@@ -25,7 +16,7 @@ console.log(producto.disponible)
  console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
  console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
  console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
+ console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);*/
 
 
 /*console.log(producto)
@@ -58,7 +49,7 @@ console.table(nuevoObjeto) */
 const bg = "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,9) 33%, rgba(0,212,255,1) 86%)";
 const style_console = `background: ${bg};color :white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold` 
 
-const roducto = 
+const producto = 
 { 
     Nombre:"Tablet 9\"",
     Marca:"Mac",
@@ -115,6 +106,7 @@ console.log(typeof(Producto_SKU));
 console.log("%c2.- Objeto", style_console);
 let Producto =
 { 
+    ID:3216,
     Nombre:"Tenis",
     Marca:"Adiddas",
     Modelo:"Zamba",
@@ -122,6 +114,7 @@ let Producto =
     Disponibilidad:false,
     Stock: true,
     SKU: Symbol("SAAD920422MPLLNL05"),
+    Stock:6,
     Imagen: "Sin imagen",
     Barcode: null,
     Categoria: ["Electronicos", "Hogar", "Accesorios","Ropa", "Tecnologia","Zapaterías"]
@@ -146,6 +139,7 @@ console.log("%c3.- Destructuración de Objetos", style_console);
 
 let Producto2 =
 {
+ID:"2205",
 Clave:321,
 Nombre: "Autos",
 Marca:"Volkswaguen",
@@ -171,6 +165,7 @@ Categorias: ["Autos"],
 
 let pedido=
 {
+    ID:5810,
     producto_clave:321,
     comprador_clave:225,
     Cantidad:1,
@@ -294,16 +289,21 @@ else
 precioProducto = "barato"
 
 if(clienteSaldo > 0)
-    clienteSaldo="A avor"
+    clienteSaldo="a favor"
 else if(clienteSaldo < 0) 
 clienteSaldo="En contra"
 else 
 clienteSaldo="sin deuda"
 //transformar valores cualitativos en cuantitativo 
-let clienteNivel
+
+let clienteNivel;
 if(clienteTipo=="Premiun")
-clienteNivel =2
-if(clienteTipo=="no identificado")
+clienteNivel=1
+if(clienteTipo=="Premiun")
+    clienteNivel=2
+if(clienteTipo=="No identificado")
+    clienteNivel=3
+//Clacificacion del cliente por su pais de origen
 if (clientePais=="México")
     clientePais="Nacional"
 else
@@ -311,10 +311,59 @@ clientePais="Extranjero"
 
 //OLE -Bojet Liiteral Emnahcement
 
-let datosClientePromociones ={clienteCorreo,clientePais,clienteNivel,clienteSaldo,productoMarca,productoPrecio}
+let datosClientePromociones ={clienteCorreo,clientePais,clienteNivel,clienteSaldo,productoMarca,precioProducto}
 
 /*el objetivo que creamos seria un ejmplo de de la informacion 
 que enviariamos  al area de Marketing para la difucion de promociones */
 console.log("Los habitos del cliente y sus habitos de compra son:")
 console.table(datosClientePromociones)
 
+
+// Operaciones sobre objetos 
+//Union de objetos 
+console.log("%c10.- Union de iobjetos usando el metodo de asignacion(ASSING)", style_console);
+console.log("Imprimimos la estructura y valores del Objeto (PRODUCTO")
+console.table(Producto);
+
+console.log("Imprimimos la estructura y valores del Objeto (PEDIDO")
+console.table(pedido);
+
+
+let Producto3={...producto}
+const Venta= Object.assign(Producto3,pedido);
+console.log("Consultamos este nuevo objeto en venta")
+console.table(venta);
+
+
+console.log("%c11 ---------------------------- ", style_console);
+
+const Venta2=
+{
+    producto:{...producto},
+    Comprador:{...Comprador},
+    pedido:{...pedido}
+}
+console.log("Fucionampos los 3 objetos en uno nuevo, sin perdida de informacion")
+console.log(Venta2)
+console.table(Venta2)
+
+
+
+
+console.log("%c12.-Congelados y Sellados  ", style_console);
+
+console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
+console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(pedido)}`);
+console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(pedido)}`);
+
+console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
+console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Comprador)}`);
+console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Comprador)}`);
+
+console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
+console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Producto)}`);
+console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Producto)}`);
+
+producto[`isLegasy`]=false;
+console.log(producto)
+console.log (Venta2);
