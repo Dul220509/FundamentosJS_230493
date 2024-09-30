@@ -1,49 +1,3 @@
-// const nombre = "Tablet"
-// const precio = 300
-// const disponible = true
-/*console.warn("----------------------------");
-
-console.log(producto)
-console.table(producto)
-
-console.log(producto.modelo)
-console.log(producto.costo_venta)
-console.log(producto.disponible)
- //accseder a las propiedades de un objeto
- console.warn("Leyendo las prropiedades de un objeto y sus tipos d dato/n");
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
- console.log(`El costo del producto es: ${producto.costo_compra}  que es de tipo ${typeof(costo_compra)}`);
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);
- console.log(`Nombre del producto: ${producto.modelo}  que es de tipo ${typeof(producto)}`);*/
-
-
-/*console.log(producto)
-console.table(producto)
-console.log(producto.nombre)
-console.log(producto.precio)
-console.log(producto.disponible)
-
-// Destructuring
-
-const { nombre, precio, disponible } = producto
-console.log(nombre)
-console.log(precio)
-console.log(disponible)
-
-// Object Literal Enhacement
-
-const autenticado = true
-const usuario = "Jonathan"
-
-const nuevoObjeto = {
-    autenticado,
-    usuario
-}
-
-console.table(nuevoObjeto) */
-
 
 //objetos 
 const bg = "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,9) 33%, rgba(0,212,255,1) 86%)";
@@ -277,19 +231,18 @@ console.table(pedido)
 //Union de Objetos
 
 console.log("%c9,- Destructuración de 2 o mas objetos", style_console);
-
-
-const{Precio:productoPrecio , SKU:productoSku, Marca:productoMarca,}= producto
-const {correo: clienteCorreo, Pais: clientePais, SaldoActual: clienteSaldo, Tipo:clienteTipo} =Comprador
+let{Precio:precioProducto , SKU:productoSku, Marca:productoMarca,}= Producto
+let{correo: clienteCorreo, Pais: clientePais, SaldoActual: clienteSaldo, Tipo:clienteTipo} =
+Comprador
 
 //Transformar valores cuantitativos en cualitativas 
-if (productoPrecio>2000)
+if (precioProducto>2000)
     precioProducto= "caro"
 else 
 precioProducto = "barato"
 
 if(clienteSaldo > 0)
-    clienteSaldo="a favor"
+    clienteSaldo="A favor"
 else if(clienteSaldo < 0) 
 clienteSaldo="En contra"
 else 
@@ -297,27 +250,24 @@ clienteSaldo="sin deuda"
 //transformar valores cualitativos en cuantitativo 
 
 let clienteNivel;
-if(clienteTipo=="Premiun")
-clienteNivel=1
-if(clienteTipo=="Premiun")
+if(clienteTipo=="premium")
+    clienteNivel =1
+if(clienteTipo== "freemium")
     clienteNivel=2
-if(clienteTipo=="No identificado")
-    clienteNivel=3
-//Clacificacion del cliente por su pais de origen
-if (clientePais=="México")
+if(clienteTipo== "No identificado")
+    clienteNivel=3 
+
+//clasificamos al cliente por su país de origen 
+
+if (clientePais == "México")
     clientePais="Nacional"
-else
+else 
 clientePais="Extranjero"
 
-//OLE -Bojet Liiteral Emnahcement
-
-let datosClientePromociones ={clienteCorreo,clientePais,clienteNivel,clienteSaldo,productoMarca,precioProducto}
-
-/*el objetivo que creamos seria un ejmplo de de la informacion 
-que enviariamos  al area de Marketing para la difucion de promociones */
-console.log("Los habitos del cliente y sus habitos de compra son:")
-console.table(datosClientePromociones)
-
+//ole 
+let datoClientePromociones={clienteCorreo,clientePais,clienteNivel,clienteSaldo,productoMarca,precioProducto}
+console.log("los datos del cliente y sus habitps de compra son:")
+console.table(datoClientePromociones)
 
 // Operaciones sobre objetos 
 //Union de objetos 
@@ -332,14 +282,14 @@ console.table(pedido);
 let Producto3={...producto}
 const Venta= Object.assign(Producto3,pedido);
 console.log("Consultamos este nuevo objeto en venta")
-console.table(venta);
+console.table(Venta);
 
 
 console.log("%c11 ---------------------------- ", style_console);
 
 const Venta2=
 {
-    producto:{...producto},
+    Producto:{...Producto},
     Comprador:{...Comprador},
     pedido:{...pedido}
 }
@@ -356,11 +306,11 @@ console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
 console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(pedido)}`);
 console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(pedido)}`);
 
-console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
+console.log("Vamos a verificar al estatus de mutabilidad del onjeto COMPRADOR")
 console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Comprador)}`);
 console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Comprador)}`);
 
-console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
+console.log("Vamos a verificar al estatus de mutabilidad del onjeto PRODUCTO")
 console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Producto)}`);
 console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Producto)}`);
 
