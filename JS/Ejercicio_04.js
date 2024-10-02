@@ -270,50 +270,58 @@ console.log("los datos del cliente y sus habitps de compra son:")
 console.table(datoClientePromociones)
 
 // Operaciones sobre objetos 
-//Union de objetos 
-console.log("%c10.- Union de iobjetos usando el metodo de asignacion(ASSING)", style_console);
-console.log("Imprimimos la estructura y valores del Objeto (PRODUCTO")
+//union de objetos 
+console.log("%c10,- Unión de objetos usando el método de asignación (ASSING)", style_console);
+
+console.log("Imprimir la estructura y valores del objeto de PRODUCTO")
 console.table(Producto);
 
-console.log("Imprimimos la estructura y valores del Objeto (PEDIDO")
+console.log("Imprimir la estructura y valores del objeto de PEDIDO")
 console.table(pedido);
 
 
-let Producto3={...producto}
-const Venta= Object.assign(Producto3,pedido);
-console.log("Consultamos este nuevo objeto en venta")
+
+//suponiendo que el ususario ya realizó el pago el pedido se convertira en una VENTA que requiere información de ambos objetos 
+let Producto3={...Producto}
+const Venta = Object.assign(Producto3, pedido);
+console.log("Consultamos este nuevo objeto VENTA")
 console.table(Venta);
 
+//Union de Objetos usando SPREAD OPERATOR para evitar la perdida de información con Objetos que comparten el mismo nombre en sus propiedades 
 
-console.log("%c11 ---------------------------- ", style_console);
+console.log("c11.- Unión de objetos usando el SPREAD OPERATOR (...) ",style_console);
 
-const Venta2=
-{
-    Producto:{...Producto},
-    Comprador:{...Comprador},
-    pedido:{...pedido}
+console.table(Producto2);
+console.table(Comprador);
+console.table(pedido);
+
+let Venta2 = 
+{ 
+    producto: {...producto},
+    Comprador: {...Comprador},
+    pedido: {...pedido}
 }
-console.log("Fucionampos los 3 objetos en uno nuevo, sin perdida de informacion")
-console.log(Venta2)
-console.table(Venta2)
+console.log("Fusionamos los 3 Objetos en uno nuevo sin perdida de información")
+console.table(Venta2);
+
+const autenticado=true
+const usuario="say"
+
+console.log("Vamos a verificar el estatus mutabilidad del objeto PEDIDO")
+console.log(`Esta el objeto de pedido congelado? : ${Object.isFrozen(pedido)}`);
+console.log(`Esta el objeto de pedido sellado? : ${Object.isSealed(pedido)}`);
 
 
+console.log("Vamos a verificar el estatus mutabilidad del objeto COMPRADOR")
+console.log(`Esta el objeto de pedido congelado? : ${Object.isFrozen(Comprador
+)}`);
+console.log(`Esta el objeto de pedido sellado? : ${Object.isSealed(Comprador)}`);
 
 
-console.log("%c12.-Congelados y Sellados  ", style_console);
+console.log("Vamos a verificar el estatus mutabilidad del objeto PRODUCTO")
+console.log(`Esta el objeto de pedido congelado? : ${Object.isFrozen(producto)}`);
+console.log(`esta el objeto de pedido sellado? : ${Object.isSealed(producto)}`);
 
-console.log("Vamos a verificar al estatus de mutabilidad del onjeto PEDIDO")
-console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(pedido)}`);
-console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(pedido)}`);
-
-console.log("Vamos a verificar al estatus de mutabilidad del onjeto COMPRADOR")
-console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Comprador)}`);
-console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Comprador)}`);
-
-console.log("Vamos a verificar al estatus de mutabilidad del onjeto PRODUCTO")
-console.log(`Esta el onjeto de pedido congelado? : ${object.isFrozen(Producto)}`);
-console.log(`Esta el onjeto de pedido sellado? :${object.isSealed(Producto)}`);
-
-producto[`isLegasy`]=false;
+Producto[`isLegacy`]=false;
 console.log(producto)
-console.log (Venta2);
+console.log(Venta2);
