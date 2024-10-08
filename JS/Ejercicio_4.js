@@ -1,4 +1,4 @@
-https://drive.google.com/drive/folders/1ItU8rbSGJjnh2USOBGwaCo9nYKifPJ6m
+
 
 // Repaso de Arreglo
 
@@ -114,7 +114,7 @@ console.log(`La longitud de la fila ${[i]} es = ${matrizIrregular[i].length}`)
 
 
 // Para saber la dimensión de una matriz irregular podemos hacer el uso de ciclo
-let numeroFilas = matrizIrregular.length
+let numerofilas = matrizIrregular.length
 for (let i = 0;i<numeroFilas; i++)
 console.log(`La longitud de la fila ${[i]} es = ${matrizIrregular[i].length}`)
 
@@ -134,4 +134,44 @@ console.log("El arregloMixto actualmente tiene los siguientes elementos:")
 console.table(arregloMixto);
 console.log("Agregamos la palabra : \"Hola\", como nuevo elemento")
 arregloMixto.push("Hola");
-console.log("Y tambien agregamos ")
+console.log("Y también agregamos el numero -3218817875487448415.23597518864, siendo este un BigInt")
+arregloMixto.push(BigInt(-3218817875487448415.23597518864))
+console.log("Después de esta dos operaciones el arreglo queda con los siguientes elementos: ")
+console.table(arregloMixto)
+
+console.log("%c6.- Agregar un nuevo elemento a un arreglo (UNSHIFT) en la posición inicial",style_console)
+console.table(estudiantes)
+console.log("Ahora agregamos a Raúl Pasos, al comienzo del arreglo.")
+arregloMixto.unshift("Raúl Pasos")
+console.log("La lista atual es:")
+console.table(estudiantes)
+
+
+console.log("%c7.- Eliminar el elemento de un arreglo en la última posición (POP)",style_console)
+console.log("El arreglo tiene los siguientes elementos: ")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Obed Gúzman, en la última posición. ")
+console.log("Después de eliminar el elemento el arreglo quedo de la siguiente manera:")
+arregloMixto.pop();
+console.table(estudiantes)
+
+
+console.log("%c8.- Eliminar el elemento de un arreglo en la primera posición (SHIFT)",style_console)
+console.log("El arreglo tiene los siguientes elementos:")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Raúl Pasos, en la primera posición.")
+estudiantes.shift();
+console.log("Después de eliminar el elemento del arreglo quedo de la siguiente manera: ")
+console.table(estudiantes);
+
+
+console.log("%c9.- Modificar un arreglo en un arreglo nuevo con posiciones definidas (SPLICE)", style_console)
+console.log("El arreglo original tiene los elementos:")
+console.table(estudiantes);
+console.log("Dividir el arreglo en uno nuevo eliminando ciertos elementos en base a su posicion")
+//Cuando la funcion splice recibe un solo parametro eliminara los elementos de esa posicion en adelante
+estudiantes.splice(5)
+console.table(estudiantes)
+//Cuando las funcion splice recibe dos parametros se eliminan todos los elementos  que no estan en este rango
+
+estudiantes.push("Jesus Dominguez")
