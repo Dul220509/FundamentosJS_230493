@@ -170,8 +170,84 @@ console.log("El arreglo original tiene los elementos:")
 console.table(estudiantes);
 console.log("Dividir el arreglo en uno nuevo eliminando ciertos elementos en base a su posicion")
 //Cuando la funcion splice recibe un solo parametro eliminara los elementos de esa posicion en adelante
-estudiantes.splice(5)
+estudiantes.splice(2)
 console.table(estudiantes)
 //Cuando las funcion splice recibe dos parametros se eliminan todos los elementos  que no estan en este rango
 
 estudiantes.push("Jesus Dominguez")
+estudiantes.push("Adrian Jimenez")
+estudiantes.push("Citlalli Rodriguez")
+estudiantes.push("Carlos Daniel García")
+estudiantes.push("Giovanni Pasos")
+console.log("Se han agregado 5 nuevos estudiantes por lo que el arreglo es: ")
+console.table(estudiantes)
+console.log("ajora ya tenemos los elemntos suficientes  para aplicar el metodo splice con dos parámetros que serran 3,5")
+estudiantes.splice(3,5)
+console.log("Resultado en :")
+console.table(estudiantes)
+
+console.log("ahora vamos a insertar a \"Edwin Campos\ en los elemntos de ña posicion 0 y 1")
+estudiantes.splice(1,0,"Edwin Campos")
+console.log("El resultado en : ")
+console.table(estudiantes)
+
+//Tambien splice sirve para reemplazarelementos po otros en este caso reemplazar a "Jose Aruro "
+console.log("")
+
+
+console.log("%c10.- Metodos para la manipulacion de arreglos INMUTABLES" , style_console);
+let signosZodiacales=["Aries","Tauro","Geminis","Cancer","Leo","Virgo","Libra", "Escorpio","Sagitario","Capricornio","Acuario","Piscis"]
+
+let [signo1,,signo3,,,,signo7,,,,,]=signosZodiacales;
+console.log(`El primer signo zodiacal es: ${signo1}`)
+console.log(`El tercer signo zodiacal es: ${signo3}`)
+console.log(`El primer signo zodiacal es: ${signo7}`)
+
+console.log("%c11.- Filtrando de Elemento dentro de un arreglo utilizando el metodo Filter", style_console)
+
+estudiantes.push("Fracisco Garcia");
+estudiantes.push("Jesus Alejandro");
+estudiantes.push("Matias Granillo");
+estudiantes.push("Jesus Dominguez");
+estudiantes.push("Jennifer Bautista");
+estudiantes.push("Edwin Hernandez");
+console.table(estudiantes); 
+
+Object.freeze(estudiantes);
+
+console.log("Filtrando los primeros 5 elementos");
+let nuevoEstudiantes = estudiantes.filter((estudiante,index) => index<5);
+console.table(nuevoEstudiantes);
+console.table(filtraPrimeros5(estudiantes)); 
+
+let nuevoEstudiantesNombre =estudiantes.filter((estudiante) => estudiante.length>15);
+console.table(nuevoEstudiantesNombre);
+
+//intentamos modificar el arreglo inmutable 
+//intentamos modificar el nuevo 
+
+nuevoEstudiantes.unshift("Francisco Flores");
+console.table(nuevoEstudiantes);
+
+function filtraPrimeros5(arregloEstudiantes){
+   let listafiltrada= []
+   for (let i =0 ; i<5; i++)
+{
+
+
+listafiltrada.push(arregloEstudiantes[i]);
+
+}
+return listafiltrada;
+}
+
+console.log("%c12.- Filtrado de Elementos dentro de un arreglo utilizando el metodo MAP, en el que necesitaremos transformarlos", style_console);
+console.log("Imprimimos los elementos actuales de signos zodiacales")
+console.table(signosZodiacales)
+
+console.table(signosZodiacales.map(signoZodiacal=>signoZodiacal.toUpperCase())); 
+const costosListasCompras= [15,52.50,16.90,32.50,28,105,45.2,94.10]
+console.log("Los precios son:")
+console.table(costosListasCompras)
+
+console.log(`El total de la compra es:${costosListasCompras.reduce((total,precio)=>total+precio,0).toFixed(2)}`)
