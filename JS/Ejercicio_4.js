@@ -240,6 +240,7 @@ console.table(nuevoEstudiantesNombre);
 //console.table(estudiantes);
 
 //intentamos modificar el nuevo arreglo que no ah sido congelado  
+//hjhkjhklkjghjvnbvv bhjghjkh 
  
 
 nuevoEstudiantes.unshift("Francisco Flores");
