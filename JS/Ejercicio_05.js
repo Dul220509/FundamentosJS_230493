@@ -4,17 +4,17 @@
 const bg="linear-gradient(11deg,rgba(0,199,36,1) 0%, rgba(192,255,26,1)33%, rgba(191,255,26,1) 86%)";
 const style_console =`background: ${bg}; color:white; border-radius:6px; padding:4px; font-size: 1.0rem; font-weight: bold`
 
-//Personalizacion de consola 
+//Personalizacion de las salidas de  consola 
 
 console.warn("Practica 7 : ARREGLOS EN JAVA SCRIPT")
 console.log("%c1.- CONDICIONALES -SI/ENTONCES...(IF)", style_console);
-
+//Le indica al programa que hacer o que no en base a una prueba logica de verdadero o falso
 let fechaActual=new Date();
-
+//let fechaActual=new Date("2025/06/05");
 
 console.log(`Hola la fecha de hoy es :${fechaActual.toString()}`);
 
-
+//Y si la necesitamos en formato local?
 const fechaLocal1MX =fechaActual.toLocaleString('es-MX',
     {
         weekday:'long',
@@ -29,19 +29,19 @@ const fechaLocal1MX =fechaActual.toLocaleString('es-MX',
 
 
 
-
+//Si es antes de las 12 saluda con un beuenos dias 
 
     if(fechaActual.getHours()<12)
         console.log(`Buenos días , hoy es ${fechaLocal1MX}`);
 
-
+//existe un extensor de la sentencia if(si)que es else (en caso contrario)
     if(fechaActual.getMonth()<=6)
     console.log(`Estas en la primera mitad de añoi`);
     else
     console.log(`Estas en la segunda mitad del año`);
 
 
-
+//Que pasa si la validacion tiene varias operaciones 
 
      const anio=fechaActual.getFullYear();
 
@@ -75,6 +75,68 @@ const fechaLocal1MX =fechaActual.toLocaleString('es-MX',
      {
         console.log("Estamos en Otoño..")
         console.log("Los arboles suelen cambiar de follaje")
-        console.log("Se registran temperaturas mas")
-        console.log("Los animales conmienzan con la hibiernacion")
+        console.log("Se registran temperaturas mas templadas")
+        console.log("Los animales conmienzan con la recloeccion de alimento y preparan sus espacios para la hibernacion, incluso algunas aves migran.")
+        estacion="verano"
+        horarioVerano=true;
      }
+else
+{
+   console.log("Estamos en -invierno..")
+   console.log("En esta temporada los dias son mas cortos  y las noches son mas largas")
+   console.log("En algunas regiones suele nevar ...")
+   console.log("Dado las bajas temperaturas se recomienda abrigarse...")
+   estacion="invierno"
+   horarioVerano=false;
+}
+
+
+
+console.log("%c2.- Operador ternario (Validacion cumple:no_cumple", style_console);
+/*En Java Script esiste una operacion simplificada que valida si una condicion se cumple o no 
+y que hacer en cada caso */
+const edadPersona=18;
+const mayorEdadMX =18;
+const mayorEdadUS =21;
+
+let evaluarMayoriaEdad =(edad)=>edad>=18?"Eres mayor de edad.": "No eres mayor de edad."
+
+
+console.log("Evaluando la mayoria de edad de una persona...")
+console.log(evaluarMayoriaEdad(edadPersona));
+
+/*Sin embargo tenemos que considerar que la mayoria de edad varia en cada pais 
+por cuestiones legales,por lo quqe debemos considerar un segundo parametro en la evaluacion */
+evaluarMayoriaEdad=(edad,pais)=>(edad>=18 && pais==="MX")?`En ${pais} eres mayor de esad`:`En ${pais} no eres mayor de edad`;
+
+
+console.log("Evaluando la mayoria de edad de una persona en México...")
+console.log(evaluarMayoriaEdad(edadPersona,"MX"));
+
+console.log("Evaluando la mayoria de edad de una persona en Estados Unidos...")
+console.log(evaluarMayoriaEdad(edadPersona,"US"));
+
+
+console.log("%c3.- SWITCH-CASE(Eleccion de valor definido)", style_console);
+
+
+
+let asignaGeneracion=(anioNacimiento)=>{switch(true)
+
+   {
+      case(anioNacimiento<1968)://Baby boomers
+         return"Baby Boomers";
+
+      case(anioNacimiento>1968 && anioNacimiento<=1980):
+         return "Generacion X";
+
+      case(anioNacimiento>1980 && anioNacimiento<=1994):
+         return "Milenials";
+
+      case(anioNacimiento>1994 && anioNacimiento<=2010):
+         return "Centenials";
+
+      case(anioNacimiento>2010):
+         return"Krystal"
+   }
+}
