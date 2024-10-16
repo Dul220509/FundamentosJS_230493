@@ -3,7 +3,7 @@
 // Repaso de Arreglo
 
 //Declaración de Variables de Estilo
-const bg = "linear-gradient(11deg, rgba(199,0,36,1) 0%, rgba(255,129,26,1) 33%, rgba(255,191,26,1) 86%)";
+const bg = "linear-gradient(11deg, rgba(105,22,98,1) 0%, rgba(215,129,87,15) 33%, rgba(215,191,59,19) 86%)";
 const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
 
 //Personalización de las Salidas a Consola
@@ -191,20 +191,28 @@ estudiantes.splice(1,0,"Edwin Campos")
 console.log("El resultado en : ")
 console.table(estudiantes)
 
-//Tambien splice sirve para reemplazarelementos po otros en este caso reemplazar a "Jose Aruro "
+//Tambien splice sirve para reemplazarelementos por otros en este caso reemplazar a "Jose Aruro "
 console.log("")
 
 
 console.log("%c10.- Metodos para la manipulacion de arreglos INMUTABLES" , style_console);
 let signosZodiacales=["Aries","Tauro","Geminis","Cancer","Leo","Virgo","Libra", "Escorpio","Sagitario","Capricornio","Acuario","Piscis"]
+//Congelamos el arreglo volviendolo inmutable
+Object.freeze(signosZodiacales);
+//Ninguna se ejecuta por que nuestro arreglo es inmutable
+ /*signosZodiacales.push("Ofiuco");
+ signosZodiacales.unshift();
+ signosZodiacales.splice(9,2);*/
 
 let [signo1,,signo3,,,,signo7,,,,,]=signosZodiacales;
 console.log(`El primer signo zodiacal es: ${signo1}`)
 console.log(`El tercer signo zodiacal es: ${signo3}`)
 console.log(`El primer signo zodiacal es: ${signo7}`)
 
-console.log("%c11.- Filtrando de Elemento dentro de un arreglo utilizando el metodo Filter", style_console)
 
+//Filtrado de datos 
+console.log("%c11.- Filtrando de Elemento dentro de un arreglo utilizando el metodo Filter", style_console)
+//Antes  de filtrar datos llenemos el arreglo con 10 elementos
 estudiantes.push("Fracisco Garcia");
 estudiantes.push("Jesus Alejandro");
 estudiantes.push("Matias Granillo");
@@ -212,19 +220,28 @@ estudiantes.push("Jesus Dominguez");
 estudiantes.push("Jennifer Bautista");
 estudiantes.push("Edwin Hernandez");
 console.table(estudiantes); 
-
 Object.freeze(estudiantes);
+
+/*Filter es un elemento que recorre los elementos de un arreglo haciendo alguna tarea en especifico,
+lo que tenemos que considerar es que este nuevo arreglo resultante es un objeto nuevo que puede ser mutable */
 
 console.log("Filtrando los primeros 5 elementos");
 let nuevoEstudiantes = estudiantes.filter((estudiante,index) => index<5);
 console.table(nuevoEstudiantes);
 console.table(filtraPrimeros5(estudiantes)); 
 
+//Filtrar a los estudiantes que su nombre tenga mas de 15 caracteres
+
 let nuevoEstudiantesNombre =estudiantes.filter((estudiante) => estudiante.length>15);
 console.table(nuevoEstudiantesNombre);
 
-//intentamos modificar el arreglo inmutable 
-//intentamos modificar el nuevo 
+//intentamos modificar el arreglo que no ah sido inmutable
+//estudiantes.pop();
+//console.table(estudiantes);
+
+//intentamos modificar el nuevo arreglo que no ah sido congelado  
+//hjhkjhklkjghjvnbvv bhjghjkh 
+ 
 
 nuevoEstudiantes.unshift("Francisco Flores");
 console.table(nuevoEstudiantes);
@@ -240,13 +257,23 @@ listafiltrada.push(arregloEstudiantes[i]);
 }
 return listafiltrada;
 }
-
+//Filtrado de datos - Transformando los datos 
 console.log("%c12.- Filtrado de Elementos dentro de un arreglo utilizando el metodo MAP, en el que necesitaremos transformarlos", style_console);
 console.log("Imprimimos los elementos actuales de signos zodiacales")
-console.table(signosZodiacales)
-
+console.table(signosZodiacales);
+/*Que podemos hacer si necesitamos el mismo arreglo pero ahora 
+con todos sus elementos en con letras MAYUSCULAS */
+console.log("Los signos Zodiacales en maýúsculas son:")
 console.table(signosZodiacales.map(signoZodiacal=>signoZodiacal.toUpperCase())); 
+
+/**
+ * Reduccion de elemtos de un arreglo , se usa cuando devemos hacer operaciones 
+ * matematicas o cuantitativas a un arreglo como obtener totales, la idea es reducir las
+ * listas a un valor mas simplificado.
+ */
+console.log("%c13.- totales" , style_console);
 const costosListasCompras= [15,52.50,16.90,32.50,28,105,45.2,94.10]
+//como podemos calcular el total de una lista de costos de un carrito de compras
 console.log("Los precios son:")
 console.table(costosListasCompras)
 
