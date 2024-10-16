@@ -233,91 +233,158 @@ for (num=1; num <=10; num++)
    console.log(num);
 }
 
-console.log("%c6.- Ciclo iterativo (FOR))", style_console);
-//Recorre de manera iterativa (i), de incremental o decremental
+console.log("%c6.- Ciclo Iterativo - (FOR)", style_console);
 
-console.log("Los dias de la semana son en orden ascendente son: ")
-let dias=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+console.log("Los dias de la semana son de orden ascendente son:")
+let dias=["Domingo","lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
 
 for(let i=0; i<dias.length; i++)
-console.log(dias[i])
+console.log(dias[i]) 
 
-console.log("Ahora vamos a imprimir los meses en orden desendente...")
-const meses=["Enero","febrero","Marzo","abril","Mayo","junio","julio","Agosto","septiembre","octubre","noviembre","Diciembre"]
+console.log("Los meses en orden descendente son: ...")
+const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+
 for(let i=meses.length-1; i>=0; i--)
-   console.log(meses[i]);
+console.log(meses[i]);
 
-console.log("%c7.- Ciclo Condicionales (WIHILE)", style_console);
-//Estos siclos(BUCKLE dependen de una condicion para continuar ejecutandose)
-let finDeSemana=false;
-let mensaje="";
-let j=0;
-//Usamos J para que coincida con el indice
+console.log("%c7.- ciclo condicionales (WHILE", style_console);
 
-while(j<dias.length){
-   switch(j){
-      case 0:
-         finDeSemana=true;
-         mensaje="Mormingoo...Hora de dormir";
-         break;
-      case 1:
-         finDeSemana=false;
-         mensaje="San lunes a trabajar";
-         break;
-      case 2:
-         finDeSemana=false;
-         mensaje="Segundo dia de chamba a darle";
-         break;
-      case 3:
-         finDeSemana=false;
-         mensaje="hombligo de semana";
-         break;
-      case 4:
-         finDeSemana=false;
-         mensaje="juevebes";
-         break;
-      case 5:
-         finDeSemana=false;
-         mensaje="vebiernes";
-         break;
-      case 6:
-         finDeSemana=false;
-         mensaje="sabatodo";
-         break;
-   }
-   //imprimir el nombre del dia y su mensaje 
-   if (!finDeSemana)
-   {
-      console.log(`Dia: ${dias[j]}`);
-      console.log(`Mensaje del dia: ${mensaje}`);
-   }
-   j++;
+let FinDeSemana = false; 
+let mensaje = ""; 
+let j =0;
 
-   console.log("%c8.-Ciclo condicionales, que se ejecuta al menos una vez (DOWHILE)", style_console);
-   //Simulamos una lista de episodios de una temporada
-   let episodios=[
-      "Episodio 1:   hgh",
-      "Episodio 2:  ghghg ",
-      "Episodio 3: hghg",
-      "Episodio 4: ghgh",
-      "Episodio 5: hghg",
-   ];
-   let indice=0;
-   let continuarViendo= true; // Esta variable del usuario de continuar leyendo
-   
-   do {
-      console.log(`Reproduciendo${episodios[indice]}`);
-       //simulamos la reproduccion del pisodio
-     
-      indice++;
-       //simulamos una pregunta al usuario si desea seguir viendo
-     if (indice < episodios.length) {
-      continuarViendo = confirm("¿Deseas continuar con el siguiente episodio");
-     }else{
-      continuarViendo =false; ///Cuando se acaba de la lista de episodios 
-     }
-   }while (continuarViendo && indice < episodios.length);
-   console.log("Fin de la Reproducción.");
+while (j < dias.length){
+switch (j) {
+    case 0: 
+    FinDeSemana = true;
+    mensaje = "Ya es Momingooo"; 
+    break; 
 
+    case 1: 
+    FinDeSemana = false; 
+    mensaje = "San lunes a chambiar..."; 
+    break; 
+
+    case 2: 
+    FinDeSemana = false; 
+    mensaje = "Animoo Segundo dia de chamba";
+    break; 
+
+    case 3:
+        FinDeSemana= false; 
+        mensaje= " Ombligo de semana ...";
+        break; 
+
+    case 4: 
+        FinDeSemana = false; 
+        mensaje = "Ya es Juevebessssss"; 
+        break; 
+
+ case 5: 
+        FinDeSemana=false;
+        mensaje= "Por fin es viernes "
+        break; 
+
+ case 6:
+            FinDeSemana= false; 
+            mensaje= "Llegamos a fin de semana";
+            break;
+}
+if (!FinDeSemana)
+{
+    console.log(`Día: ${dias[j]}`);
+    console.log(`Mensaje del dia: ${mensaje}`);
+}
+j++;
+}
+
+
+console.log("%c8.- ciclo condicionales, que se ejecutan al menos una vez - (DO WHILE)", style_console);
+
+let episodios = [
+    "Episodio 1: Un caso de homicidio",
+    "Episodio 2: La entrevista",
+    "Episodio 3: Por primera vez",
+    "Episodio 4: Pip y Ravi",
+    "Episodio 5: La confesion",
+    "Episodio 6: Caso solucionado",
+];
+
+let indice = 0;
+let continuarViendo = true; 
+
+do {
+    console.log(`Reproduciendo ${episodios[indice]}`)
+    indice++;
+
+    if(indice < episodios.length){
+        continuarViendo = confirm("Deseas continuar con el siguiente episodio?"); 
+}else{
+    continuarViendo = false; 
+}
+}while (continuarViendo && indice < episodios.length);
+console.log("Fin de la reproduccion.");
+
+//ciclo para recorrer objetos iterables como mapas, arreglos, cadenas y conjuntos de datos 
+console.log("%c9.- ciclo para recorrer elementos finitos (FOR ...OF", style_console);
+
+let seriesTrending = [
+    { nombre: "The umbrella Academy", temporadas: 3, totalViewers: "1.0M", totalReprods: "5.0M"},
+    { nombre: "Control Z", temporadas: 2, totalViewers: "1.50M", totalReprods: "2.0M"},
+    { nombre: "Asesinato Para Principiantes", temporadas: 1, totalViewers: "1.0M", totalReprods: "1.0M"},
+
+];
+  
+for(let serie of seriesTrending){
+    console.log(`Serie: ${serie.nombre}, Temporadas: ${serie.Temporadas}`);
+}
+try {
+    console.log(`La ultima serie leida fue: ${serie.nombre}`);
+}
+catch(error)
+{
+    console.log("Mensaje de error: "+error.message)
+}
+console.log("%c10,- Ciclos para recorrer las propiedades de elmentos finitos-(FOR..IN", style_console); 
+
+for (let i in seriesTrending) {
+    console.log(`Serie ${parseInt(i)+1}:`);
+    for (let propiedad in seriesTrending[i]){
+        console.log(`${propiedad}: ${seriesTrending[1][propiedad]}`);
+    }
+    console.log(`--------------------`); 
 
 }
+console.log("%c11.- ciclos ininterrumpidos para cada uno de los elementos del arreglo (FOR EACH)", style_console);
+
+let seriesTrending2 = [
+    {nombre: "The Witcher", temporadas:4, viewers: 800000, reproducciones:25000},
+    {nombre: "Stranger Things", temporadas:5, viewers: 500000, reproducciones:25000},
+    {nombre: "The Boys", temporadas:3, viewers: 600000, reproducciones:25000},
+    {nombre: "Loki", temporadas:3, viewers: 300000, reproducciones:25000},
+    {nombre: "Succession", temporadas:6, viewers: 700000, reproducciones:25000},
+];
+
+seriesTrending.forEach((serie,index )=> {
+    let calificacion = (serie.reproducciones / serie.viewers).toFixed(2);
+
+
+    console.log(`Serie: ${index + 1}:`);
+    console.log(`Nombre: ${serie.nombre}:`);
+    console.log(`Temporada: ${serie.temporadas}:`);
+    console.log(`Viewers: ${serie.viewers}:`);
+    console.log(`Reproducciones: ${serie.reproducciones}:`);
+    console.log(`Calificacion: ${calificacion}:`);
+    console.log(`-------------`);
+
+});
+
+let seriesDeseadas = ["The Whitcher", " the boys", " loki"];
+
+let seriesConTresTemporadas = seriesTrending2
+.filter(serie => serie.temporadas <=3 )
+.map(serie => serie.nombre)
+.filter(nombre => seriesDeseadas.includes(nombre)); 
+
+console.log("Series con tres temporadas que estan en la lista deseada:");
+console.log(seriesConTresTemporadas);
